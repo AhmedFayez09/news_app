@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:news_c6/core/constant/my_theme.dart';
 import 'package:news_c6/core/utils/app_router.dart';
+import 'package:news_c6/logic/app_provider.dart';
 import 'package:news_c6/modules/home/home.dart';
 import 'package:news_c6/modules/home/news_fragment.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(create: (c) => App_Provider(), child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -20,16 +22,6 @@ class MyApp extends StatelessWidget {
       routes: routes,
       theme: MyThemeData.lightTheme,
       themeMode: ThemeMode.light,
-
-
-
-
-
-
-
-
-
     );
   }
 }
-
